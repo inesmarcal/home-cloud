@@ -1,4 +1,4 @@
-FROM node:current-alpine as builder
+FROM node:24.10.0-alpine3.22 as builder
 
 WORKDIR /usr/src/app/client
 
@@ -10,7 +10,7 @@ COPY [".", "."]
 
 RUN npm run build
 
-FROM node:current-alpine
+FROM node:24.10.0-alpine3.22
 
 WORKDIR /usr/src/app/client
 
